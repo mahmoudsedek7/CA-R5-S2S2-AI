@@ -1,0 +1,119 @@
+from classes import *
+def show_menu():
+    print("\n" + "=" * 40)
+    print("       HOSPITAL MANAGEMENT SYSTEM")
+    print("=" * 40)
+    print("1. Add Department")
+    print("2. Add Patient")
+    print("3. Add Staff")
+    print("4. View Departments")
+    print("5. View Patients")
+    print("6. View Staff")
+    print('7. search')
+    print("8. Exit")
+
+def main():
+    hospital_name = input("Enter hospital name: ")
+    hospital_location = input("Enter hospital location: ")
+    hospital = Hospital(hospital_name, hospital_location)
+    print("\nHospital created successfully!")
+    while True:
+        show_menu()
+        choice = input("\nEnter your choice: ")
+    # 1. Add Department
+    
+    
+    
+    
+    
+    # 2. Add Patient
+    
+    
+    
+    
+    
+    # 3. Add Staff
+    
+    
+    
+    
+    
+    
+    # 4. View Departments
+    
+    
+    
+    
+    
+    # 5. View Patients
+    
+    
+    
+    
+    
+    
+    # 6. View Staff
+    
+    
+    
+    
+    
+    
+    #7.search
+    
+    def search():
+    
+        while True:
+
+            print("\n" + "=" * 40)
+            print("                 SEARCH")
+            print("=" * 40)
+
+            print("1. Search Department")
+            print("2. Search Patient")
+            print("3. Search Staff")
+            print("4. Back")
+
+            choice = input("\nEnter your choice: ")
+            #1. search department
+            if choice == "1":
+
+                hospital_name = input("Enter hospital name: ")
+
+                if hospital_name.lower() != hospital.name.lower():
+                    print("Hospital not found.")
+                    continue
+
+                department_name = input("Enter department name: ")
+
+                found_department = None
+
+                for department in hospital.departments:
+
+                    if department.name.lower() == department_name.lower():
+                        found_department = department
+                        break
+                    if fouund_department
+            
+            
+            
+            
+            
+            
+    
+    # 8. Exit
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+        
