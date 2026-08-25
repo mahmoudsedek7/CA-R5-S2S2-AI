@@ -12,6 +12,12 @@ def show_menu():
     print('7. search')
     print("8. Exit")
 
+#exit
+    def exit_system():
+    print("Exiting Hospital Management System...")
+    return True
+
+
 def main():
     hospital_name = input("Enter hospital name: ")
     hospital_location = input("Enter hospital location: ")
@@ -269,16 +275,20 @@ def main():
                         
     elif choice=='7':
          search()
-            
-            
+
+
+    # 8. Exit            
+
+    elif choice == "8":
+    if exit_system():
+        break        
             
             
             
     
-    # 8. Exit
-    
-    
-    
+
+
+
     
     
     
