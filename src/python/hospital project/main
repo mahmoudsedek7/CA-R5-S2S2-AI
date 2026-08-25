@@ -93,8 +93,176 @@ def main():
                     if department.name.lower() == department_name.lower():
                         found_department = department
                         break
-                    if fouund_department
-            
+                    if found_department is None:
+                        print("Department not found.")
+                    else:
+    
+                        print("\n" + "=" * 40)
+                        print("DEPARTMENT DETAILS")
+                        print("=" * 40)
+
+                        print(f"Hospital: {hospital.name}")
+                        print(f"Department: {found_department.name}")
+
+                        print("\n--- Staff ---")
+
+                        if len(found_department.staff) == 0:
+                           print("No staff.")
+                        else:
+                            for staff in found_department.staff:
+                                print(staff.view_info())
+                        print("\n--- Patients ---")
+                        if len(found_department.patients)==0:
+                            print("No patients.")
+                        else:
+                            for patient in found_departmet.patients:
+                                print(patient.view_info())
+             # Search Patient
+            elif choice == "2":
+               print("\n1. Search by Name")
+               print("2. Search by ID")
+
+               search_choice = input("\nEnter your choice: ")
+
+               hospital_name = input("Enter hospital name: ")
+
+               if hospital_name.lower() != hospital.name.lower():
+                    print("Hospital not found.")
+                    continue
+
+               found_patient = None
+               patient_department = None
+
+               if search_choice == "1":
+
+                    patient_name = input("Enter patient name: ")
+
+                    for department in hospital.departments:
+
+                        for patient in department.patients:
+
+                            if patient.name.lower() == patient_name.lower():
+
+                                found_patient = patient
+                                patient_department = department
+                                break
+
+                        if found_patient:
+                            break
+
+               elif search_choice == "2":
+
+                    patient_id = input("Enter patient ID: ")
+
+                    for department in hospital.departments:
+
+                        for patient in department.patients:
+
+                            if str(patient.id) == patient_id:
+
+                                found_patient = patient
+                                patient_department = department
+                                break
+
+                        if found_patient:
+                            break
+
+               else:
+
+                    print("Invalid choice.")
+                    continue
+
+               if found_patient is None:
+
+                    print("Patient not found.")
+
+               else:
+
+                    print("\n" + "=" * 40)
+                    print("PATIENT DETAILS")
+                    print("=" * 40)
+
+                    print(found_patient.view_info())
+                    print(f"Department: {patient_department.name}")
+                    print(found_patient.view_record())
+
+            # Search Staff
+            elif choice == "3":
+
+                print("\n1. Search by Name")
+                print("2. Search by ID")
+
+                search_choice = input("\nEnter your choice: ")
+
+                hospital_name = input("Enter hospital name: ")
+
+                if hospital_name.lower() != hospital.name.lower():
+                    print("Hospital not found.")
+                    continue
+
+                found_staff = None
+                staff_department = None
+
+                if search_choice == "1":
+
+                    staff_name = input("Enter staff name: ")
+
+                    for department in hospital.departments:
+
+                        for staff in department.staff:
+
+                            if staff.name.lower() == staff_name.lower():
+
+                                found_staff = staff
+                                staff_department = department
+                                break
+
+                        if found_staff:
+                            break
+
+                elif search_choice == "2":
+
+                    staff_id = input("Enter staff ID: ")
+
+                    for department in hospital.departments:
+
+                        for staff in department.staff:
+
+                            if str(staff.id) == staff_id:
+
+                                found_staff = staff
+                                staff_department = department
+                                break
+
+                        if found_staff:
+                            break
+
+                else:
+
+                    print("Invalid choice.")
+                    continue
+
+                if found_staff is None:
+
+                    print("Staff not found.")
+
+                else:
+
+                    print("\n" + "=" * 40)
+                    print("STAFF DETAILS")
+                    print("=" * 40)
+
+                    print(found_staff.view_info())
+                    print(f"Department: {staff_department.name}")
+
+            elif choice == "4":
+                show_menu()
+
+            else:
+                print("Invalid choice.")
+                        
+    elif choice=='7':
+         search()
             
             
             
