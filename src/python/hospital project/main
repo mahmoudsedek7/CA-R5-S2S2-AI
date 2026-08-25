@@ -21,6 +21,7 @@ def main():
         show_menu()
         choice = input("\nEnter your choice: ")
     # 1. Add Department
+
     Departments = []
     def Add_Department(hospital_name):
         Dep = input("Enter department name:")   
