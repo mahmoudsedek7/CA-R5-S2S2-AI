@@ -65,7 +65,30 @@ def main():
     
     
     # 6. View Staff
-    
+    elif choice == "6":
+    hname = input("Enter hospital name: ")
+
+    if hname.lower() != hospital.name.lower():
+        print("Hospital not found.")
+        continue
+
+    dname = input("Enter department name: ")
+
+    dept = None
+    for d in hospital.departments:
+        if d.name.lower() == dname.lower():
+            dept = d
+            break
+
+    if dept is None:
+        print("Department not found.")
+    else:
+        print("\n--- Staff ---")
+        if len(dept.staff) == 0:
+            print("No staff.")
+        else:
+            for s in dept.staff:
+                print(s.view_info())
     
     
     
