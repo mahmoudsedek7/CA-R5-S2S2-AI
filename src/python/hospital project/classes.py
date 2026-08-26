@@ -1,9 +1,10 @@
 class Person:
     """Base class for all people in the hospital."""
-    def __init__(self, id ,name, age):
+    def __init__(self, id, name, age):
         self.name = name
         self.age = age
         self.id = id
+
     def view_info(self):
         """View basic information about the person."""
         return f"id: {self.id}, Name: {self.name}, Age: {self.age}"
@@ -11,8 +12,8 @@ class Person:
 
 class Patient(Person):
     """Class for hospital patients, inheriting from Person."""
-    def __init__(self, id, name, age,medical_record):
-        super().__init__(name, age, id)
+    def __init__(self, id, name, age, medical_record):
+        super().__init__(id, name, age)
         self.medical_record = medical_record
 
     def view_record(self):
@@ -22,8 +23,8 @@ class Patient(Person):
 
 class Staff(Person):
     """Class for hospital staff, inheriting from Person."""
-    def __init__(self,id , name, age,position):
-        super().__init__(id ,name, age)
+    def __init__(self, id, name, age, position):
+        super().__init__(id, name, age)
         self.position = position
 
     def view_info(self):
