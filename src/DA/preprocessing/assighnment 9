@@ -1,0 +1,29 @@
+import pandas as pd
+
+def Read_data_file(file_path):
+    try:
+        df = pd.read_csv(file_path)
+        return df
+
+    except FileNotFoundError:
+        print("Error: The file does not exist.")
+
+    except PermissionError:
+        print("Error: You do not have permission to read this file.")
+
+    except Exception as e:
+        print(f"Error: The file could not be read. {e}")
+
+    return None
+def Drop_unnecessary_features(df, cols_to_drop):
+    return df.drop(columns=cols_to_drop)
+import pandas as pd
+
+def check_data_type(df):
+    summary = pd.DataFrame({
+        'Dtype': df.dtypes.astype(str),
+        'Unique_Values': df.nunique(),
+        'Missing_Values': df.isnull().sum(),
+        'Missing_%': (df.isnull().sum() / len(df) * 100).round(2),
+    })
+    return summary.T
