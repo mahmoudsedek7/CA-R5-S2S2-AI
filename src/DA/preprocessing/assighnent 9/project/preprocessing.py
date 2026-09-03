@@ -17,7 +17,6 @@ def Read_data_file(file_path):
     return None
 def Drop_unnecessary_features(df, cols_to_drop):
     return df.drop(columns=cols_to_drop)
-import pandas as pd
 
 def check_data_type(df):
     summary = pd.DataFrame({
